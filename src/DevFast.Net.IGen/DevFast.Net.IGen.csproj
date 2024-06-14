@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <NoWarn>CA1062;CA1068</NoWarn>
+    <NoWarn>CA1062;CA1068;NU5128</NoWarn>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
@@ -35,17 +35,25 @@
     <PackageTags>devfast;fastdev;dotnet;roslyn;generator;auto-code</PackageTags>
     <PackageReleaseNotes>https://raw.githubusercontent.com/samaysar/dotnet.devfast.igen/master/ReleaseNotes.txt</PackageReleaseNotes>
     <NeutralLanguage />
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <AnalysisLevel>6.0-all</AnalysisLevel>
+    <WarningLevel>9999</WarningLevel>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="" />
+    <None Include="..\..\LICENSE" Pack="true" Visible="false" PackagePath="" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />    
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
 </Project>
