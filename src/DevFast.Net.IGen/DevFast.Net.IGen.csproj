@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn>CA1062;CA1068</NoWarn>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <BuildOutputTargetFolder>analyzers</BuildOutputTargetFolder>
+    <Title>DevFast.Net.IGen</Title>
+    <Company>samaysar</Company>
+    <Version Condition="'$(vNugetPack)'==''">1.0.0</Version>
+    <Version Condition="'$(vNugetPack)'!=''">$(vNugetPack)</Version>
+    <PackageVersion Condition="'$(vNugetPack)'==''">1.0.0-alpha</PackageVersion>
+    <PackageVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</PackageVersion>
+    <FileVersion Condition="'$(vNugetPack)'==''">1.0.0</FileVersion>
+    <FileVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</FileVersion>
+    <AssemblyVersion Condition="'$(vNugetPack)'==''">1.0.0</AssemblyVersion>
+    <AssemblyVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</AssemblyVersion>
+    <InformationalVersion Condition="'$(vNugetPack)'==''">1.0.0-alpha.0</InformationalVersion>
+    <InformationalVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack).0</InformationalVersion>
+    <AssemblyTitle>DevFast.Net.IGen (TargetFramework: $(TargetFramework))</AssemblyTitle>
+    <Authors>Divya Sarthi MAHESHWARI</Authors>
+    <Description>Package containing well-tested generator for interface implementation &amp; beyond.</Description>
+    <Copyright>Copyright © Divya Sarthi MAHESHWARI 2024</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/samaysar/dotnet.devfast</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/samaysar/dotnet.devfast.igen</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>devfast;fastdev;dotnet;roslyn;generator;auto-code</PackageTags>
+    <PackageReleaseNotes>https://raw.githubusercontent.com/samaysar/dotnet.devfast.igen/master/ReleaseNotes.txt</PackageReleaseNotes>
+    <NeutralLanguage />
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>latest</LangVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AnalysisLevel>6.0-all</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
